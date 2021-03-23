@@ -2,22 +2,6 @@
 # -*- coding: utf-8 -*-
 # */AIPND/intropylab-classifying-images/check_images.py
 #                                                                             
-# TODO: 0. Fill in your information in the programming header below
-# PROGRAMMER:
-# DATE CREATED:
-# REVISED DATE:             <=(Date Revised - if any)
-# REVISED DATE: 05/14/2018 - added import statement that imports the print 
-#                           functions that can be used to check the lab
-# PURPOSE: Check images & report results: read them in, predict their
-#          content (classifier), compare prediction to actual value labels
-#          and output results
-#
-# Use argparse Expected Call with <> indicating expected user input:
-#      python check_images.py --dir <directory with images> --arch <model>
-#             --dogfile <file that contains dognames>
-#   Example call:
-#    python check_images.py --dir pet_images/ --arch vgg --dogfile dognames.txt
-##
 
 # Imports python modules
 import argparse
@@ -34,7 +18,7 @@ from print_functions_for_lab_checks import *
 def main():
     # TODO: 1. Define start_time to measure total program runtime by
     # collecting start time
-    start_time = None
+    start_time = time()
     
     # TODO: 2. Define get_input_args() function to create & retrieve command
     # line arguments
@@ -67,12 +51,17 @@ def main():
 
     # TODO: 1. Define end_time to measure total program runtime
     # by collecting end time
-    end_time = None
+    end_time = time()
 
     # TODO: 1. Define tot_time to computes overall runtime in
     # seconds & prints it in hh:mm:ss format
-    tot_time = None
+    tot_time = start_time - end_time
     print("\n** Total Elapsed Runtime:", tot_time)
+
+    # Prints overall runtime in format hh:mm:ss
+    print("\nTotal Elapsed Runtime:", str( int( (tot_time / 3600) ) ) + ":" + 
+          str( int(  ( (tot_time % 3600) / 60 )  ) ) + ":" + 
+          str( int( ( (tot_time % 3600) % 60 ) ) ) )
 
 
 
