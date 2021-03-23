@@ -23,6 +23,7 @@ def main():
     # TODO: 2. Define get_input_args() function to create & retrieve command
     # line arguments
     in_arg = get_input_args()
+    print("Command Line Arguments:\n    dir=",in_arg.dir, "\n   arch=", in_arg.arch, "\n dogfile =", in_arg.dogfile )
     
     # TODO: 3. Define get_pet_labels() function to create pet image labels by
     # creating a dictionary with key=filename and value=file label to be used
@@ -87,8 +88,23 @@ def get_input_args():
     Returns:
      parse_args() -data structure that stores the command line arguments object  
     """
-    pass
+    # create a parser
+    parser = argparse.ArgumentParser()
 
+    # create 3 comandLine arguments args.dir for paths to images files,
+    # args.arch which CNN model to use for classification, args.labels path
+    # to text file with names of dogs
+    parser.add_argument('--dir', type=str, default='pet_images/',
+                        help='path to folder of images')
+    
+    parser.add_argument('--arch', type='str', default='vgg',
+                        help='chosen model')
+
+    parser.add_argument('--dogfile', type='str', default='dognames.txt',
+                        help='text file that has dog names')
+    
+    # returns parsed argument collection
+    return parser.parse_args()
 
 def get_pet_labels():
     """
