@@ -1,0 +1,2 @@
+# pyLab-classifying-images
+In a citywide dog show, we help the organizing committee with contestant registration. Every participant that registers must submit an image of their dog along with biographical information about their dog. The registration system tags the images based upon the biographical information.  Some people are planning on registering pets that aren’t actual dogs  We developed Python classifier to make sure the participants are dogs.
